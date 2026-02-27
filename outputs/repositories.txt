@@ -1,0 +1,50 @@
+import requests
+import json
+
+def fetch_top_repos():
+    url = "https://api.github.com/search/repositories"
+    params = {
+        "q": "language:python",
+        "sort": "stars",
+        "order": "desc",
+        "per_page": 5
+    }
+    response = requests.get(url, params=params)
+    data = json.loads(response.text)
+    return data["items"]
+
+def display_repo_info(repos):
+    for repo in repos:
+        print(f"Name: {repo['name']}")
+        print(f"Stars: {repo['stargazers_count']}")
+        print(f"URL: {repo['html_url']}")
+        print("------------------------")
+
+def main():
+    top_repos = fetch_top_repos()
+    display_repo_info(top_repos)
+
+if __name__ == "__main__":
+    main()
+
+# Execution output:
+# Name: public-apis
+# Stars: 400818
+# URL: https://github.com/public-apis/public-apis
+# ------------------------
+# Name: free-programming-books
+# Stars: 383173
+# URL: https://github.com/EbookFoundation/free-programming-books
+# ------------------------
+# Name: system-design-primer
+# Stars: 336842
+# URL: https://github.com/donnemartin/system-design-primer
+# ------------------------
+# Name: awesome-python
+# Stars: 284777
+# URL: https://github.com/vinta/awesome-python
+# ------------------------
+# Name: Python
+# Stars: 218197
+# URL: https://github.com/TheAlgorithms/Python
+# ------------------------

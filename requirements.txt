@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+langgraph
+langchain
+langchain-groq
+langchain-community
+langchain-core
+duckduckgo-search
+docker
+requests
+python-dotenv
+pydantic
