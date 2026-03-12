@@ -157,7 +157,7 @@ AgentOS/
 ### Installation
 
 ```bash
-git clone https://github.com/yourname/agentos
+git clone https://github.com/Yashkashte5/AgentOS
 cd AgentOS
 pip install -r requirements.txt
 ```
