@@ -1,0 +1,5 @@
+__pycache__
+outputs/
+.env
+history.db
+node_modules/
